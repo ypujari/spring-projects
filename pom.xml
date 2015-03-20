@@ -53,6 +53,11 @@
           <artifactId>spring-security-config</artifactId>
           <version>3.2.6.RELEASE</version>
       </dependency>
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>18.0</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>spring-projects</finalName>

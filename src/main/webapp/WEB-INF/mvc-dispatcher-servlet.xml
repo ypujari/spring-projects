@@ -8,7 +8,7 @@
     <security:http auto-config="false" use-expressions="true">
         <security:intercept-url pattern="/login" access="permitAll"/>
         <security:intercept-url pattern="/**" access="isAuthenticated()"/>
-        <security:form-login login-processing-url="/validateUser" username-parameter="username" password-parameter="password" default-target-url="/loginSuccess"/>
+        <security:form-login login-processing-url="/validateUser" username-parameter="username" password-parameter="password" default-target-url="/users"/>
     </security:http>
 
     <security:authentication-manager>
@@ -21,6 +21,10 @@
     </security:authentication-manager>
 
     <context:component-scan base-package="com.spring.samples.controller"/>
+    <context:component-scan base-package="com.spring.samples.brokers"/>
+    <context:component-scan base-package="com.spring.samples.domain"/>
+    <context:component-scan base-package="com.spring.samples.services"/>
+    <context:component-scan base-package="com.spring.samples.factories"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="com.spring.samples.view.beans.StringTemplateView"/>
